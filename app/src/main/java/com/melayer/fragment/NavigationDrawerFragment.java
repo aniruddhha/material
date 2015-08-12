@@ -2,6 +2,7 @@ package com.melayer.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,7 +22,7 @@ import com.melayer.model.RecyclerItem;
 public class NavigationDrawerFragment extends Fragment {
 
     private View rootView;
-    private RecyclerView recyclerView;
+    private NavigationView navigationView;
 
     public static NavigationDrawerFragment getInstance() {
         NavigationDrawerFragment fragment = new NavigationDrawerFragment();
@@ -35,24 +36,6 @@ public class NavigationDrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
 
-        recyclerView = (RecyclerView)rootView.findViewById(R.id.drawerMenu);
-        recyclerView.setHasFixedSize(true);
-
-        RecyclerItem []items = {
-
-                new RecyclerItem(R.drawable.abc_ic_menu_paste_mtrl_am_alpha,"Paste"),
-                new RecyclerItem(R.drawable.abc_ic_menu_cut_mtrl_alpha,"Cut"),
-                new RecyclerItem(R.drawable.abc_ic_menu_share_mtrl_alpha,"Share"),
-                new RecyclerItem(R.drawable.abc_ic_menu_selectall_mtrl_alpha,"Select All"),
-                new RecyclerItem(R.drawable.abc_ic_menu_moreoverflow_mtrl_alpha,"More")
-        };
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
-        MyAdapter adapter = new MyAdapter(getActivity(),items);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return rootView;
     }

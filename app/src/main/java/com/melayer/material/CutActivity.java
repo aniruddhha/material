@@ -1,5 +1,6 @@
 package com.melayer.material;
 
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,7 +12,11 @@ import android.view.MenuItem;
 
 public class CutActivity extends AppCompatActivity {
 
+    private CollapsingToolbarLayout collapsingToolbarLayout;
     private Toolbar toolBar;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +27,9 @@ public class CutActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+        collapsingToolbarLayout.setTitle("Android");
     }
 
     @Override
