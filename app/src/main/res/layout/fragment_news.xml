@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.melayer.fragment.NewsFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.melayer.fragment.NewsFragment">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputUserName"
@@ -20,9 +20,9 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textInputPassword">
+        android:layout_height="wrap_content">
 
         <EditText android:id="@+id/edtPassword"
             android:layout_width="match_parent"
@@ -33,6 +33,11 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
 
 
 </LinearLayout>

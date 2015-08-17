@@ -1,16 +1,17 @@
 package com.melayer.fragment;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.melayer.material.R;
+import com.melayer.web.IServiceListener;
+import com.melayer.web.MyService;
 
 
 public class NewsFragment extends Fragment {
@@ -20,14 +21,16 @@ public class NewsFragment extends Fragment {
     private TextInputLayout textInputUserName, textInputPassword;
     private EditText edtUserName, edtPassword;
 
+    private Button btnLogin;
+
+    public NewsFragment() {
+    }
+
     public static NewsFragment newInstance() {
         NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public NewsFragment() {
     }
 
     @Override
@@ -45,6 +48,16 @@ public class NewsFragment extends Fragment {
         textInputPassword.setErrorEnabled(true);
         //textInputPassword.setError("Password Cant be null");
         edtPassword = (EditText) rootView.findViewById(R.id.edtPassword);
+
+        btnLogin = (Button) rootView.findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                IServiceListener listener = new MyService();
+
+            }
+        });
 
         return rootView;
     }
